@@ -18,8 +18,7 @@ const messaging = firebase.messaging();
 messaging.onBackgroundMessage((payload) => {
   const title = payload.notification?.title || "Notificación";
   const options = {
-    body: payload.notification?.body || "",
-    icon: "/icon-192.png"
+    body: payload.notification?.body || ""
   };
   self.registration.showNotification(title, options);
 });
@@ -27,5 +26,5 @@ messaging.onBackgroundMessage((payload) => {
 // Manejar clics en la notificación
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  event.waitUntil(clients.openWindow('/'));
+  event.waitUntil(clients.openWindow('/notificacion.github.io/'));
 });
