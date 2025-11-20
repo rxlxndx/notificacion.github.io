@@ -26,5 +26,5 @@ messaging.onBackgroundMessage((payload) => {
 // Manejar clics en la notificación
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  event.waitUntil(clients.openWindow('/notificacion.github.io/'));
+  event.waitUntil(clients.openWindow('/'));
 });
