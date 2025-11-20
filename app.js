@@ -73,7 +73,12 @@ async function requestPermissionAndGetToken() {
 // Escuchamos mensajes cuando la pestaña está abierta
 if (messaging) {
   onMessage(messaging, (payload) => {
-    log("Mensaje en primer plano:\n" + JSON.stringify(payload, null, 2));
+    const info = {
+      from: payload.from,
+      notification: payload.notification,
+      data: payload.data
+    };
+    log("Mensaje en primer plano:\n" + JSON.stringify(info, null, 2));
   });
 }
 
