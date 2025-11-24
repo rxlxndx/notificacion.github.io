@@ -40,7 +40,7 @@ if (supported) {
 }
 
 // Clave pública VAPID (de Cloud Messaging)
-const VAPID_KEY = "BI02PQ6iKv_nA2GA0dJVJsHoHVekW-cWmj_tO4FLhVnEeDxwpZkF3t46QDN7iFi_-fGLkusuiVDU7NXtCldLRTQ";
+const VAPID_KEY = "BLZ4WG5KHtY43U49O_Pn-uhyI-sEWNhZPaw1ykvCpY0MavMCQCCPy9NrRzJGp06-wMc0-Ju4G1YTnwOWUdRNBRI";
 
 // Función para pedir permiso al usuario y obtener token
 async function requestPermissionAndGetToken() {
@@ -73,15 +73,9 @@ async function requestPermissionAndGetToken() {
 // Escuchamos mensajes cuando la pestaña está abierta
 if (messaging) {
   onMessage(messaging, (payload) => {
-    const info = {
-      from: payload.from,
-      notification: payload.notification,
-      data: payload.data
-    };
-    log("Mensaje en primer plano:\n" + JSON.stringify(info, null, 2));
+    log("Mensaje en primer plano:\n" + JSON.stringify(payload, null, 2));
   });
 }
 
 // Vinculamos la función al botón de permiso
 $("#btn-permission").addEventListener("click", requestPermissionAndGetToken);
-
