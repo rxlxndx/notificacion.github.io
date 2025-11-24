@@ -40,7 +40,7 @@ if (supported) {
 }
 
 // Clave pública VAPID (de Cloud Messaging)
-const VAPID_KEY = "BLZ4WG5KHtY43U49O_Pn-uhyI-sEWNhZPaw1ykvCpY0MavMCQCCPy9NrRzJGp06-wMc0-Ju4G1YTnwOWUdRNBRI";
+const VAPID_KEY = "BI02PQ6iKv_nA2GA0dJVJsHoHVekW-cWmj_tO4FLhVnEeDxwpZkF3t46QDN7iFi_-fGLkusuiVDU7NXtCldLRTQ";
 
 // Función para pedir permiso al usuario y obtener token
 async function requestPermissionAndGetToken() {
